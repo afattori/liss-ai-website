@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liss AI — Your business, always answered</title>
+<meta name="description" content="Liss AI is the AI receptionist that answers calls, books appointments and never sleeps — built for salons, clinics, restaurants and studios.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="status-pill" id="statusPill">
+  <span class="dot"></span>
+  <span>Liss AI is answering calls right now</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">Liss<span>AI</span></a>
+    <nav class="nav-links">
+      <a href="#problem">Why it matters</a>
+      <a href="#how">How it works</a>
+      <a href="#audience">Who it's for</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#demo-form" class="btn btn-primary btn-small">Book a demo</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">AI receptionist for local businesses</p>
+        <h1>Your business,<br>always answered.</h1>
+        <p class="hero-sub">Liss AI picks up every call and message — during your busiest cut, your quietest Tuesday, or 2am on a Sunday — and turns it into a booked appointment. No missed calls, no lost clients, no extra staff.</p>
+        <div class="hero-actions">
+          <a href="#demo-form" class="btn btn-primary">Book a free demo</a>
+          <a href="#demo" class="btn btn-ghost">See it answer a call ↓</a>
+        </div>
+        <p class="hero-note">Live in under a week · No app for your clients to download</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-mock">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="chat-header">
+              <div class="chat-avatar">L</div>
+              <div>
+                <div class="chat-name">Liss AI</div>
+                <div class="chat-status">Online · replies in seconds</div>
+              </div>
+            </div>
+            <div class="chat-body" id="heroChat"></div>
+          </div>
+        </div>
+        <div class="floaty floaty-1">📅 Booked</div>
+        <div class="floaty floaty-2">🔔 New request</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="problem">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow-dark">The cost of a missed call</p>
+      <h2>Every unanswered call is a client walking to your competitor.</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <span class="problem-icon">✂️</span>
+          <p class="problem-stat">1 in 3</p>
+          <p>calls to small businesses go unanswered during service hours — you're busy with the client in front of you.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-icon">🌙</span>
+          <p class="problem-stat">62%</p>
+          <p>of booking requests happen outside opening hours, when nobody is there to pick up.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-icon">📵</span>
+          <p class="problem-stat">85%</p>
+          <p>of callers who reach voicemail simply don't call back — they book somewhere else instead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION FLOW -->
+  <section class="solution">
+    <div class="section-inner">
+      <p class="eyebrow">The fix</p>
+      <h2>Liss AI answers so the appointment gets booked anyway.</h2>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-icon">📞</div>
+          <p>Client calls, texts or messages your business</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-icon">🧠</div>
+          <p>Liss AI understands what they need and checks your real calendar</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-icon">✅</div>
+          <p>Appointment is booked and confirmed — you just see it on your schedule</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS + LIVE DEMO (dark band) -->
+  <section id="how" class="dark-band">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow-light">How it works</p>
+      <h2 class="light">From missed call to booked appointment, in three steps.</h2>
+
+      <div class="how-grid">
+        <div class="how-step">
+          <span class="how-num">01</span>
+          <h3>Connect your line</h3>
+          <p>Liss AI plugs into your existing phone number, WhatsApp or website chat — nothing to switch, nothing new for clients to learn.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">02</span>
+          <h3>It learns your business</h3>
+          <p>Services, prices, hours and availability are loaded in once. Liss AI speaks in your tone and follows your booking rules.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">03</span>
+          <h3>It handles the rest</h3>
+          <p>Every call and message gets a reply, every booking lands straight in your calendar, and you get a daily summary — nothing to babysit.</p>
+        </div>
+      </div>
+
+      <div id="demo" class="demo-block">
+        <p class="eyebrow eyebrow-light">See it in action</p>
+        <h3 class="light">A real booking request, answered instantly.</h3>
+        <div class="demo-phone">
+          <div class="phone-mock phone-mock-dark">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="chat-header">
+                <div class="chat-avatar">L</div>
+                <div>
+                  <div class="chat-name">Liss AI</div>
+                  <div class="chat-status">Online · replies in seconds</div>
+                </div>
+              </div>
+              <div class="chat-body" id="demoChat"></div>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-light btn-small" id="replayDemo">↻ Replay</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section id="audience" class="audience">
+    <div class="section-inner">
+      <p class="eyebrow">Built for</p>
+      <h2>If clients book by phone or message, Liss AI fits.</h2>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <span class="audience-icon">💇</span>
+          <h3>Hair &amp; beauty salons</h3>
+          <p>Books cuts, colors and treatments around a chair that's rarely free to answer the phone.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon">💆</span>
+          <h3>Wellness &amp; beauty centers</h3>
+          <p>Handles treatment questions, availability and rebooking without interrupting a session.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon">🍽️</span>
+          <h3>Restaurants</h3>
+          <p>Takes table reservations and party sizes during the dinner rush, when the phone rings loudest.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon">🗂️</span>
+          <h3>Professional studios</h3>
+          <p>Clinics, law and consulting offices — screens requests and books consultations, professionally, every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <div class="section-inner">
+      <p class="eyebrow">What's included</p>
+      <h2>Everything a great receptionist does. None of the days off.</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <span class="feature-icon">🕐</span>
+          <h3>Answers 24/7</h3>
+          <p>Nights, weekends, holidays — every call gets a reply, not a voicemail.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">🌍</span>
+          <h3>Speaks your clients' language</h3>
+          <p>Handles conversations in multiple languages, so no caller gets left out.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">📆</span>
+          <h3>Syncs with your calendar</h3>
+          <p>Checks real availability before confirming, so nothing gets double-booked.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">💬</span>
+          <h3>Works over call, SMS &amp; WhatsApp</h3>
+          <p>Clients reach you however they already do — Liss AI meets them there.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">⏰</span>
+          <h3>Cuts no-shows</h3>
+          <p>Sends automatic reminders and confirmations ahead of every appointment.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">🎙️</span>
+          <h3>Sounds like your business</h3>
+          <p>Tone, greeting and script are set to match how you actually talk to clients.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">📊</span>
+          <h3>Daily summary</h3>
+          <p>A short recap of every call, booking and question — no dashboard required.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">🔌</span>
+          <h3>No app, no hardware</h3>
+          <p>Set up once on your existing number. Clients never know they're texting an AI unless you tell them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="why">
+    <div class="section-inner">
+      <p class="eyebrow">Why Liss AI</p>
+      <h2>Compared to the alternatives.</h2>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Voicemail</th>
+              <th>Answering service</th>
+              <th>Extra receptionist</th>
+              <th class="highlight">Liss AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Answers instantly, 24/7</td>
+              <td>✕</td>
+              <td>Business hours only</td>
+              <td>✕</td>
+              <td class="highlight">✓</td>
+            </tr>
+            <tr>
+              <td>Books directly into your calendar</td>
+              <td>✕</td>
+              <td>Rarely</td>
+              <td>✓</td>
+              <td class="highlight">✓</td>
+            </tr>
+            <tr>
+              <td>Knows your services &amp; prices</td>
+              <td>✕</td>
+              <td>✕</td>
+              <td>✓</td>
+              <td class="highlight">✓</td>
+            </tr>
+            <tr>
+              <td>Monthly cost</td>
+              <td>Free</td>
+              <td>€€€</td>
+              <td>€€€€</td>
+              <td class="highlight">€</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="section-inner">
+      <p class="eyebrow">Questions</p>
+      <h2>Good to know.</h2>
+      <div class="accordion" id="accordion">
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span>How long does setup take?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel"><p>Most businesses are live within a week. We load in your services, hours and booking rules, connect your number, and test a few sample calls with you before it goes live.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span>Do my clients need to download anything?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel"><p>No. They call, text or WhatsApp the number they already use for your business. Liss AI answers there — nothing new to install or learn.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span>Will it sound robotic?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel"><p>No. Tone, greeting and phrasing are set up around how your business actually talks to clients, and refined after the first real conversations.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span>What happens with requests it can't handle?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel"><p>Anything outside the rules you've set — a complex request, a complaint, a VIP client — gets flagged and forwarded straight to you, instead of guessed at.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span>Is client data kept private?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel"><p>Yes. Conversations and booking details are only used to run your business's line — never shared or reused elsewhere.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span>Can I cancel anytime?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel"><p>Yes, there's no lock-in contract. If Liss AI isn't earning its place on your line, you can turn it off whenever you like.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO BOOKING FORM -->
+  <section id="demo-form" class="demo-form-section">
+    <div class="section-inner form-inner">
+      <div class="form-copy">
+        <p class="eyebrow">Book a demo</p>
+        <h2>See Liss AI answer for your business.</h2>
+        <p class="form-sub">Tell us a bit about your business and we'll set up a short call to show you Liss AI handling a real booking scenario for you — no pressure, no obligation.</p>
+      </div>
+      <form class="demo-form" id="demoForm">
+        <label>
+          Name
+          <input type="text" name="name" required placeholder="Your name">
+        </label>
+        <label>
+          Business email
+          <input type="email" name="email" required placeholder="you@yourbusiness.com">
+        </label>
+        <label>
+          Type of business
+          <select name="business_type" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Hair or beauty salon</option>
+            <option>Wellness or beauty center</option>
+            <option>Restaurant</option>
+            <option>Professional studio / clinic</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          Anything specific you'd like us to know?
+          <textarea name="message" rows="3" placeholder="Optional"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-full">Request my demo</button>
+        <p class="form-note" id="formNote">We'll get back to you within one business day.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <a href="#top" class="logo">Liss<span>AI</span></a>
+    <p>© <span id="year"></span> Liss AI. Your business, always answered.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
