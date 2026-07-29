@@ -7,16 +7,16 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
    ============================================ */
 const heroScript = [
   { side: 'in', text: "Hi! Do you have any free slots for a haircut this Saturday afternoon?" },
-  { side: 'out', text: "Hi! Yes — 3:30pm or 4:45pm are both open. Which works better for you?" },
+  { side: 'out', text: "Hi! I've logged your request. What time works best for you?" },
   { side: 'in', text: "3:30pm please 🙂" },
-  { side: 'out', text: "Booked for Saturday at 3:30pm. You'll get a reminder the day before. See you then!" },
+  { side: 'out', text: "Got it! I've notified the team with your preferred time. We'll confirm with you shortly!" },
 ];
 
 const demoScript = [
-  { side: 'in', text: "Hey, can I book a table for 4 people tonight around 8pm?" },
-  { side: 'out', text: "Let me check... yes, I have a table for 4 at 8:15pm tonight. Want me to hold it?" },
-  { side: 'in', text: "Yes please!" },
-  { side: 'out', text: "Table for 4 confirmed for 8:15pm tonight. Just give your name at the door — see you soon!" },
+ { side: 'in', text: "Hey, can I book a table for 4 people tonight around 8pm?" },
+  { side: 'out', text: "Hi! I've noted your request for 4 people around 8pm. What name should I put it under?" },
+  { side: 'in', text: "Alex, please!" },
+  { side: 'out', text: "Thanks Alex! I've notified the team. We'll check availability and text you back shortly to confirm!" },
 ];
 
 function renderChat(containerId, script, { loop = false } = {}) {
