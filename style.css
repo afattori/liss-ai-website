@@ -390,7 +390,7 @@ h2.light { color: var(--cream); }
    ============================================ */
 .flow {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -402,6 +402,9 @@ h2.light { color: var(--cream); }
   border-radius: var(--radius);
   padding: 26px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .flow-icon { font-size: 30px; display: block; margin-bottom: 12px; }
 .flow-step p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.4; }
