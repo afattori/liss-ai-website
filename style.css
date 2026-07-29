@@ -412,8 +412,8 @@ h2.light { color: var(--cream); }
   flex-shrink: 0;
 }
 @media (max-width: 760px) {
-  .flow { flex-direction: column; }
-  .flow-arrow { transform: rotate(90deg); }
+  .flow { display: flex; flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); align-self: center; }
 }
 
 /* ============================================
