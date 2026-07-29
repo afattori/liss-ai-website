@@ -9,7 +9,7 @@ const heroScript = [
   { side: 'in', text: "Hi! Do you have any free slots for a haircut this Saturday afternoon?" },
   { side: 'out', text: "Hi! I've logged your request. What time works best for you?" },
   { side: 'in', text: "3:30pm please 🙂" },
-  { side: 'out', text: "Got it! I've notified the team with your preferred time. We'll confirm with you shortly!" },
+  { side: 'out', text: "Got it! I've notified the team with your preferred time. We'll confirm with you shortly! 🙂" },
 ];
 
 const demoScript = [
