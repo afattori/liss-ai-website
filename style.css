@@ -406,13 +406,17 @@ h2.light { color: var(--cream); }
   justify-content: flex-start;
 }
 .flow-icon {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
-  display: block;
   line-height: 1;
   margin-bottom: 12px;
 }
 .flow-step p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.4; }
 .flow-arrow {
+  align-self: center;
   font-size: 22px;
   color: var(--orange);
   flex-shrink: 0;
