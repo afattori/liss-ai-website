@@ -389,14 +389,12 @@ h2.light { color: var(--cream); }
    Solution flow
    ============================================ */
 .flow {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: stretch;
   gap: 16px;
-  flex-wrap: wrap;
 }
 .flow-step {
-  flex: 1;
-  min-width: 200px;
   background: white;
   border: 1px solid var(--line);
   border-radius: var(--radius);
