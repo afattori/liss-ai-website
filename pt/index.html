@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liss AI — O seu negócio, sempre atendido</title>
+<meta name="description" content="A Liss AI é a rececionista virtual que atende chamadas, gere pedidos de marcação e nunca dorme — criada para cabeleireiros, clínicas, restaurantes e estúdios.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="status-pill" id="statusPill">
+  <span class="dot"></span>
+  <span>A Liss está a responder a clientes neste momento</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">Liss<span>AI</span></a>
+    <nav class="nav-links">
+      <a href="#problem">Porquê importa</a>
+      <a href="#how">Como funciona</a>
+      <a href="#audience">Para quem é</a>
+      <a href="#features">Funcionalidades</a>
+      <a href="#faq">FAQ</a>
+      <a href="../">EN</a> | <a href="../it/">IT</a> | <strong>PT</strong>
+    </nav>
+    <a href="#demo-form" class="btn btn-primary btn-small">Agendar demonstração</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">🤖 Rececionistas de IA personalizados para pequenos negócios</p>
+        <h1>O seu negócio,<br>sempre atendido.</h1>
+        <p class="hero-sub">A Liss AI é a sua rececionista virtual que responde instantaneamente às mensagens dos clientes no WhatsApp, Instagram e no seu website 24/7, com conhecimento adaptado ao seu negócio.</p>
+        <div class="hero-actions">
+          <a href="#demo-form" class="btn btn-primary">Agendar demonstração grátis</a>
+          <a href="#demo" class="btn btn-ghost">Veja a responder ↓</a>
+        </div>
+        <p class="hero-note">Ativo em menos de uma semana · Sem aplicações para descarregar</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-mock">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="chat-header">
+              <div class="chat-avatar">L</div>
+              <div>
+                <div class="chat-name">Liss AI</div>
+                <div class="chat-status">Online · responde em segundos</div>
+              </div>
+            </div>
+            <div class="chat-body" id="heroChat"></div>
+          </div>
+        </div>
+        <div class="floaty floaty-1">🔔 Novo pedido</div>
+        <div class="floaty floaty-2">📩 Pedido enviado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="problem">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow-dark">O custo de uma mensagem não respondida</p>
+      <h2>Cada pedido sem resposta é um cliente que vai para a concorrência.</h2>
+     <div class="problem-grid">
+
+  <article class="problem-card">
+    <div class="problem-icon">👥</div>
+    <h3>Ocupado com clientes</h3>
+    <p>
+      Está focado em gerir o seu negócio, por isso as novas mensagens têm frequentemente de esperar.
+    </p>
+  </article>
+
+  <article class="problem-card">
+    <div class="problem-icon">⏳</div>
+    <h3>Respostas lentas</h3>
+    <p>
+      Os clientes de hoje esperam respostas rápidas. Se não as obtiverem logo, é provável que procurem outra opção.
+    </p>
+  </article>
+
+  <article class="problem-card">
+    <div class="problem-icon">📉</div>
+    <h3>Oportunidades perdidas</h3>
+    <p>
+      Cada mensagem sem resposta pode transformar-se numa marcação ou venda para um concorrente.
+    </p>
+  </article>
+
+</div>
+    </div>
+  </section>
+
+ <!-- SOLUTION FLOW -->
+<section class="solution">
+  <div class="section-inner">
+    <p class="eyebrow">A Solução</p>
+    <h2>Cada cliente recebe uma resposta rápida e precisa.</h2>
+
+    <div class="flow">
+
+      <div class="flow-step">
+        <div class="flow-icon">💬</div>
+        <p>Um cliente envia-lhe uma mensagem</p>
+      </div>
+
+      <div class="flow-arrow">→</div>
+
+      <div class="flow-step">
+        <div class="flow-icon">🧠</div>
+        <p>A Liss AI entende o pedido e responde instantaneamente com a informação correta.</p>
+      </div>
+
+      <div class="flow-arrow">→</div>
+
+      <div class="flow-step">
+        <div class="flow-icon">✅</div>
+        <p>O seu cliente obtém uma resposta imediata, mesmo quando não está disponível.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- HOW IT WORKS + LIVE DEMO (dark band) -->
+<section id="how" class="dark-band">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-light">Como funciona</p>
+    <h2 class="light">Comece em três passos simples.</h2>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <span class="how-num">01</span>
+        <h3>Escolha os seus canais</h3>
+        <p>Ligue a Liss AI ao WhatsApp, Instagram, ao seu website ou onde quer que os clientes entrem em contacto.</p>
+      </div>
+
+      <div class="how-step">
+        <span class="how-num">02</span>
+        <h3>Ensine o seu negócio</h3>
+        <p>Configuramos os seus serviços, horários, FAQ e informações do negócio para que cada resposta seja precisa e alinhada com a sua marca.</p>
+      </div>
+
+      <div class="how-step">
+        <span class="how-num">03</span>
+        <h3>Deixe-a responder por si</h3>
+        <p>Os seus clientes obtêm respostas instantâneas 24/7, enquanto se mantém focado no seu negócio.</p>
+      </div>
+    </div>
+
+    <!-- (LIVE DEMO) -->
+      <div id="demo" class="demo-block">
+        <p class="eyebrow eyebrow-light">Veja em ação</p>
+        <h3 class="light">Um pedido de marcação real, atendido instantaneamente.</h3>
+        <div class="demo-phone">
+          <div class="phone-mock phone-mock-dark">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="chat-header">
+                <div class="chat-avatar">L</div>
+                <div>
+                  <div class="chat-name">Liss AI</div>
+                  <div class="chat-status">Online · responde em segundos</div>
+                </div>
+              </div>
+              <div class="chat-body" id="demoChat"></div>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-light btn-small" id="replayDemo">↻ Repetir</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section id="audience" class="audience">
+    <div class="section-inner">
+      <p class="eyebrow">Criado para</p>
+      <h2>Negócios que recebem pedidos de clientes todos os dias.</h2>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <span class="audience-icon">💇</span>
+          <h3>Cabeleireiros e salões de beleza</h3>
+          <p>Responde a dúvidas, gere pedidos de marcação e apoia clientes enquanto está ocupado com atendimentos.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon">💆</span>
+          <h3>Centros de bem-estar e estética</h3>
+          <p>Partilha informações e gere pedidos de marcação sem interromper os tratamentos.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon">🍽️</span>
+          <h3>Restaurantes</h3>
+          <p>Responde a dúvidas sobre o menu, horário, disponibilidade e pedidos de reserva, mesmo em horas de grande movimento.</p>
+        </div>
+        <div class="audience-card">
+          <span class="audience-icon">🗂️</span>
+          <h3>Estúdios profissionais e clínicas</h3>
+          <p>Responde a pedidos de clientes, partilha informações essenciais e recebe solicitações com um tom profissional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+<section id="features" class="features">
+  <div class="section-inner">
+    <p class="eyebrow">O que está incluído</p>
+    <h2>Tudo o que o seu negócio precisa para responder mais rápido.</h2>
+
+    <div class="features-grid">
+
+      <div class="feature">
+        <span class="feature-icon">🕐</span>
+        <h3>Disponível 24/7</h3>
+        <p>Os seus clientes recebem sempre resposta, mesmo fora do horário de funcionamento.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        <h3>Respostas em segundos</h3>
+        <p>Respostas imediatas ajudam a manter os clientes interessados sem longas esperas.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🌍</span>
+        <h3>Multilingue</h3>
+        <p>Comunica naturalmente em vários idiomas para apoiar todos os seus clientes.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🧠</span>
+        <h3>À medida do seu negócio</h3>
+        <p>Cada resposta é baseada nos seus serviços, horários, perguntas frequentes e informações empresariais.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">💬</span>
+        <h3>Nos seus canais habituais</h3>
+        <p>Disponível no WhatsApp, Instagram e no seu website, utilizando os canais que os seus clientes já usam.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🎙️</span>
+        <h3>O seu tom de voz</h3>
+        <p>Configurado para comunicar de forma a refletir a identidade e o estilo da sua marca.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🔒</span>
+        <h3>Respostas fiáveis</h3>
+        <p>Respostas baseadas nas suas informações aprovadas, reduzindo erros e inconsistências.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🚀</span>
+        <h3>Configuração rápida</h3>
+        <p>Pronto a funcionar em poucos dias com uma solução à medida do seu negócio.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- WHY CHOOSE -->
+<section class="why">
+  <div class="section-inner">
+    <p class="eyebrow">Porquê a Liss AI</p>
+    <h2>Uma forma mais inteligente de gerir as mensagens dos clientes.</h2>
+
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cai-em-saco (Voicemail)</th>
+            <th>Serviço de atendimento</th>
+            <th>Rececionista extra</th>
+            <th class="highlight">Liss AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Responde instantaneamente, 24/7</td>
+            <td>✕</td>
+            <td>Apenas horário de trabalho</td>
+            <td>Depende</td>
+            <td class="highlight">✓</td>
+          </tr>
+          <tr>
+            <td>Responde a dúvidas dos clientes</td>
+            <td>✕</td>
+            <td>Limitado</td>
+            <td>✓</td>
+            <td class="highlight">✓</td>
+          </tr>
+          <tr>
+            <td>Conhece os seus serviços e informações</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>✓</td>
+            <td class="highlight">✓</td>
+          </tr>
+          <tr>
+            <td>Custo mensal</td>
+            <td>Grátis</td>
+            <td>€€€</td>
+            <td>€€€€</td>
+            <td class="highlight">Flexível</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="section-inner">
+    <p class="eyebrow">Perguntas</p>
+    <h2>Útil saber.</h2>
+
+    <div class="accordion" id="accordion">
+
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span>Quanto tempo demora a configuração?</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>A maioria dos negócios fica pronta em poucos dias. Configuramos os seus serviços, informações e tom de comunicação, e testamos tudo antes de entrar em funcionamento.</p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span>Os meus clientes precisam de descarregar algo?</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>Não. Os seus clientes usam os canais que já conhecem, como o WhatsApp, Instagram ou a conversa do seu website. Não há nada a instalar.</p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span>Vai parecer robótico?</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>Não. A Liss AI é configurada em torno do seu negócio, do seu tom de voz e da forma como costuma comunicar com os clientes.</p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span>O que acontece se não souber uma resposta?</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>A Liss AI usa apenas as suas informações aprovadas. Se um pedido estiver fora do seu conhecimento, consegue identificá-lo em vez de inventar uma resposta.</p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span>Os dados dos clientes são mantidos em privacidade?</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>As suas conversas e informações empresariais são tratadas de forma segura e usadas exclusivamente para fornecer o serviço.</p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span>A Liss AI pode ser personalizada para o meu negócio?</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>Sim. Cada configuração da Liss AI é personalizada com base nos seus serviços, clientes, estilo de comunicação e necessidades específicas.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- DEMO BOOKING FORM -->
+<section id="demo-form" class="demo-form-section">
+  <div class="section-inner form-inner">
+    <div class="form-copy">
+      <p class="eyebrow">Agendar demonstração</p>
+      <h2>Veja como a Liss AI pode ajudar o seu negócio.</h2>
+      <p class="form-sub">
+        Fale-nos um pouco sobre a sua atividade e mostramos-lhe como a Liss AI pode responder a perguntas e gerir conversas automaticamente — sem compromisso.
+      </p>
+    </div>
+
+    <form class="demo-form" id="demoForm">
+
+      <label>
+        Nome
+        <input type="text" name="name" required placeholder="O seu nome">
+      </label>
+
+      <label>
+        Email profissional
+        <input type="email" name="email" required placeholder="voce@seunegocio.com">
+      </label>
+
+      <label>
+        Tipo de negócio
+        <select name="business_type" required>
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option>Cabeleireiro ou salão de beleza</option>
+          <option>Centro de bem-estar ou estética</option>
+          <option>Restaurante</option>
+          <option>Estúdio profissional / Clínica</option>
+          <option>Outro</option>
+        </select>
+      </label>
+
+      <label>
+        Há algo específico que gostaria que soubéssemos?
+        <textarea name="message" rows="3" placeholder="Opcional"></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-primary btn-full">
+        Pedir demonstração
+      </button>
+
+      <p class="form-note" id="formNote">
+        Responderemos no prazo de um dia útil.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <a href="#top" class="logo">Liss<span>AI</span></a>
+    <p>© <span id="year"></span> Liss AI. O seu negócio, sempre atendido.</p>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
