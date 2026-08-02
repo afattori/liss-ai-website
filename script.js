@@ -5,18 +5,47 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 /* ============================================
    Animated chat sequences
    ============================================ */
-const heroScript = [
+// Detect language based on URL path (/it/, /pt/ or English)
+const path = window.location.pathname;
+const isIT = path.includes('/it/');
+const isPT = path.includes('/pt/');
+
+// Hero Chat Script Top Phone)
+const heroScript = isIT ? [
+  { side: 'in', text: "Ciao! Avete posto per un taglio questo sabato pomeriggio?" },
+  { side: 'out', text: "Ciao! Ho preso nota della tua richiesta. A che ora preferiresti?" },
+  { side: 'in', text: "Verso le 15:30 se possibile 🙂" },
+  { side: 'out', text: "Perfetto! Ho girato la richiesta allo staff. Ti confermeremo la disponibilità a breve!" }
+] : isPT ? [
+  { side: 'in', text: "Olá! Têm alguma vaga para corte de cabelo este sábado à tarde?" },
+  { side: 'out', text: "Olá! Tomei nota do seu pedido. A que horas preferia?" },
+  { side: 'in', text: "Por volta das 15:30, por favor 🙂" },
+  { side: 'out', text: "Perfeito! Já notifiquei a equipa. Vamos confirmar a disponibilidade em breve!" }
+] : [
+  // English (default)
   { side: 'in', text: "Hi! Do you have any free slots for a haircut this Saturday afternoon?" },
   { side: 'out', text: "Hi! I've logged your request. What time works best for you?" },
-  { side: 'in', text: "3:30pm please 🙂" },
-  { side: 'out', text: "Got it! I've notified the team with your preferred time. We'll confirm with you shortly! 🙂" },
+  { side: 'in', text: "Around 3:30pm please 🙂" },
+  { side: 'out', text: "Got it! I've notified the team with your preferred time. We'll confirm with you shortly!" }
 ];
 
-const demoScript = [
- { side: 'in', text: "Hey, can I book a table for 4 people tonight around 8pm?" },
-  { side: 'out', text: "Hi! I've noted your request for 4 people around 8pm. What name should I put it under?" },
+// Demo Chat Script (Restaurant / Bottom Phone)
+const demoScript = isIT ? [
+  { side: 'in', text: "Ciao, posso prenotare un tavolo per 4 persone stasera verso le 20:00?" },
+  { side: 'out', text: "Ciao! Ho registrato la tua richiesta per 4 persone verso le 20:00. A che nome segno?" },
+  { side: 'in', text: "Marco, per favore!" },
+  { side: 'out', text: "Grazie Marco! Ho avvisato il team. Verifichiamo la disponibilità e ti rispondiamo a breve per confermare!" }
+] : isPT ? [
+  { side: 'in', text: "Olá, posso reservar uma mesa para 4 pessoas hoje às 20h?" },
+  { side: 'out', text: "Olá! Registei o seu pedido para 4 pessoas por volta das 20h. Em que nome fica?" },
+  { side: 'in', text: "Alex, por favor!" },
+  { side: 'out', text: "Obrigado Alex! Já notifiquei a equipa. Vamos verificar a disponibilidade e enviamos mensagem a confirmar!" }
+] : [
+  // English (default)
+  { side: 'in', text: "Hey, can I book a table for 4 people tonight around 8pm?" },
+  { side: 'out', text: "Hi! I've logged your request for 4 people around 8pm. What name should I put it under?" },
   { side: 'in', text: "Alex, please!" },
-  { side: 'out', text: "Thanks Alex! I've notified the team. We'll check availability and text you back shortly to confirm!" },
+  { side: 'out', text: "Thanks Alex! I've notified the team. We'll check availability and text you back shortly to confirm!" }
 ];
 
 function renderChat(containerId, script, { loop = false } = {}) {
