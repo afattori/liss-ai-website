@@ -124,7 +124,7 @@ h2.light { color: var(--cream); }
 }
 
 /* ============================================
-   Nav
+   Nav & Language Switcher
    ============================================ */
 .nav {
   position: sticky;
@@ -152,12 +152,38 @@ h2.light { color: var(--cream); }
 .logo span { color: var(--orange); }
 .nav-links {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 24px;
   font-size: 14px;
   font-weight: 500;
 }
 .nav-links a { opacity: 0.75; transition: opacity 0.15s; }
 .nav-links a:hover { opacity: 1; }
+
+/* Selettore lingua */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+}
+.lang-switch a {
+  opacity: 0.6;
+}
+.lang-switch a:hover {
+  opacity: 1;
+  color: var(--orange-deep);
+}
+.lang-switch strong {
+  color: var(--orange-deep);
+  font-weight: 700;
+}
+
 @media (max-width: 820px) {
   .nav-links { display: none; }
 }
