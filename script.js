@@ -6,9 +6,9 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
    Animated chat sequences
    ============================================ */
 // Detect language based on URL path (/it/, /pt/ or English)
-const path = window.location.pathname;
-const isIT = path.includes('/it/');
-const isPT = path.includes('/pt/');
+const path = window.location.pathname.toLowerCase();
+const isIT = path.includes('/it') || path.includes('/it/');
+const isPT = path.includes('/pt') || path.includes('/pt/');
 
 // Hero Chat Script Top Phone)
 const heroScript = isIT ? [
