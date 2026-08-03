@@ -141,7 +141,7 @@ h2.light { color: var(--cream); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
 }
 .logo {
   font-family: var(--font-display);
@@ -150,6 +150,7 @@ h2.light { color: var(--cream); }
   color: var(--ink);
 }
 .logo span { color: var(--orange); }
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -160,14 +161,11 @@ h2.light { color: var(--cream); }
 .nav-links a { opacity: 0.75; transition: opacity 0.15s; }
 .nav-links a:hover { opacity: 1; }
 
-/* Selettore lingua */
+/* Language Selector */
 .lang-switch {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-left: 12px;
-  padding-left: 16px;
-  border-left: 1px solid var(--line);
   font-size: 12px;
   font-family: var(--font-mono);
   color: var(--ink-soft);
@@ -184,8 +182,23 @@ h2.light { color: var(--cream); }
   font-weight: 700;
 }
 
+/* Desktop Rule (left line) */
+@media (min-width: 821px) {
+  .lang-switch {
+    margin-left: 12px;
+    padding-left: 16px;
+    border-left: 1px solid var(--line);
+  }
+}
+
+/* Mobile Rule: hide nav-bar, keep visible language selector only */
 @media (max-width: 820px) {
-  .nav-links { display: none; }
+  .nav-inner {
+    padding: 14px 20px;
+  }
+  .nav-links a {
+    display: none;
+  }
 }
 
 /* ============================================
