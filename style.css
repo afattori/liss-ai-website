@@ -199,6 +199,9 @@ h2.light { color: var(--cream); }
   .nav-links a {
     display: none;
   }
+   .lang-switch a {
+    display: inline;
+  }
 }
 
 /* ============================================
