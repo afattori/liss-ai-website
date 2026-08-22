@@ -136,7 +136,6 @@ document.querySelectorAll('.acc-item').forEach((item) => {
 */
 const demoForm = document.getElementById('demoForm');
 const formNote = document.getElementById('formNote');
-
 if (demoForm) {
   demoForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -146,13 +145,26 @@ if (demoForm) {
     const businessType = data.get('business_type');
     const message = data.get('message');
 
-    const subject = encodeURIComponent(`Demo request — ${name} (${businessType})`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nBusiness type: ${businessType}\nMessage: ${message || '—'}`
-    );
+    formNote.textContent = "Sending your request…";
 
-    window.location.href = `mailto:hello@getlissai.com?subject=${subject}&body=${body}`;
-    formNote.textContent = "Opening your email client to send the request…";
+    fetch('INCOLLA_QUI_URL_WEBHOOK_MAKE', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        channel: 'form',
+        name: name,
+        email: email,
+        business_type: businessType,
+        message: message
+      })
+    })
+    .then(() => {
+      formNote.textContent = "Thanks! We'll get back to you within one business day.";
+      demoForm.reset();
+    })
+    .catch(() => {
+      formNote.textContent = "Something went wrong — please try again or email us directly.";
+    });
   });
 }
 
