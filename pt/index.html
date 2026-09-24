@@ -54,7 +54,7 @@
         </div>
         <p class="hero-note">Ativo em menos de uma semana · Sem aplicações para descarregar</p>
       </div>
-      <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual">
         <div class="phone-mock">
           <div class="phone-notch"></div>
           <div class="phone-screen">
@@ -65,7 +65,7 @@
                 <div class="chat-status">Online · responde em segundos</div>
               </div>
             </div>
-            <div class="chat-body" id="heroChat"></div>
+            <div class="chat-body" id="heroChat" role="log" aria-label="Liss chat" aria-live="polite" aria-relevant="additions" tabindex="0"><div class="bubble out" lang="en">Hi! How can I help you today?</div></div>
           </div>
         </div>
         <div class="floaty floaty-1">🔔 Novo pedido</div>
@@ -181,10 +181,9 @@
                   <div class="chat-status">Online · responde em segundos</div>
                 </div>
               </div>
-              <div class="chat-body" id="demoChat"></div>
+              <div class="chat-body" id="demoChat" role="log" aria-label="Liss chat" aria-live="polite" aria-relevant="additions" tabindex="0"><div class="bubble out" lang="en">Hi! How can I help you today?</div></div>
             </div>
           </div>
-          <button class="btn btn-ghost btn-light btn-small" id="replayDemo">↻ Repetir</button>
         </div>
       </div>
     </div>
@@ -466,5 +465,6 @@
 </footer>
 
 <script src="../script.js?v=2"></script>
+<script src="../chat.js"></script>
 </body>
 </html>

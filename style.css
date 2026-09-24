@@ -276,6 +276,7 @@ h2.light { color: var(--cream); }
 .hero-visual { position: relative; display: flex; justify-content: center; }
 .phone-mock {
   width: 300px;
+  max-width: 100%;
   background: var(--navy);
   border-radius: 32px;
   padding: 14px;
@@ -331,6 +332,24 @@ h2.light { color: var(--cream); }
   flex-direction: column;
   gap: 10px;
   overflow: hidden;
+}
+
+/* Keep the original phone shell while giving the conversation its own scroll area. */
+.live-chat { height: 440px; min-height: 0; }
+.live-chat .chat-header, .chat-compose, .chat-error { flex-shrink: 0; }
+.live-chat .chat-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.live-chat .bubble { flex-shrink: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.chat-compose { display: flex; gap: 6px; padding: 10px; border-top: 1px solid var(--line); }
+.chat-compose input { min-width: 0; width: 100%; border: 1px solid var(--line); border-radius: 16px; padding: 10px; font: 16px var(--font-body); color: var(--ink); background: white; }
+.chat-compose button { border: 0; border-radius: 16px; padding: 10px; background: var(--orange); color: white; font: 600 13px var(--font-body); cursor: pointer; }
+.chat-compose button:disabled { opacity: 0.5; cursor: default; }
+.chat-compose :focus-visible, .live-chat .chat-body:focus-visible { outline: 2px solid var(--orange-deep); outline-offset: -2px; }
+.chat-error { padding: 8px 12px; color: #982900; font-size: 12px; line-height: 1.4; background: var(--orange-tint); }
+.phone-mock-dark .chat-compose { border-color: var(--line-dark); }
+.phone-mock-dark .typing span { background: var(--cream); }
+@media (max-width: 720px) {
+  /* The floating status dot otherwise covers the phone's message field. */
+  body:has(.live-chat) .status-pill { display: none; }
 }
 
 .bubble {
