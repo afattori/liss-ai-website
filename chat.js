@@ -29,16 +29,17 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
   let userId;
   function getUserId() {
     if (userId) return userId;
-    try { userId = sessionStorage.getItem('liss_chat_user_id'); } catch (_) { /* Private browsing fallback. */ }
+    try { userId = sessionStorage.getItem('liss_chat_user_id'); } catch (_) {}
     if (!userId) {
       userId = crypto.randomUUID();
-      try { sessionStorage.setItem('liss_chat_user_id', userId); } catch (_) { /* Keep in memory for this page. */ }
+      try { sessionStorage.setItem('liss_chat_user_id', userId); } catch (_) {}
     }
     return userId;
   }
 
   let busy = false;
-  const widgets = [...document.querySelectorAll('#heroChat, #demoChat')].map((log) => {
+  // Keep the live Make.com chat only in the second (demo) phone.
+  const widgets = [...document.querySelectorAll('#demoChat')].map((log) => {
     const screen = log.closest('.phone-screen');
     screen.classList.add('live-chat');
     const status = screen.querySelector('.chat-status');
@@ -76,7 +77,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     widgets.forEach(({ log }) => {
       const bubble = document.createElement('div');
       bubble.className = `bubble ${side}`;
-      bubble.textContent = text; // Treat visitor and webhook text as plain text, never HTML.
+      bubble.textContent = text;
       log.append(bubble);
       log.scrollTop = log.scrollHeight;
     });
@@ -127,9 +128,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     const timer = setTimeout(() => controller.abort(), 30000);
     try {
       const response = await fetch(endpoint.href, {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'omit',
+        method: 'POST', mode: 'cors', credentials: 'omit',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: getUserId(), message, channel: 'website' }),
         signal: controller.signal
