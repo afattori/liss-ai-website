@@ -5,6 +5,16 @@
  */
 const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo6bdw8inxk';
 
+// Load the role-specific chat styles from the same directory as this script so
+// the language-specific pages work whether the site is hosted at / or a subpath.
+const chatScript = document.currentScript;
+if (chatScript?.src) {
+  const roleStyles = document.createElement('link');
+  roleStyles.rel = 'stylesheet';
+  roleStyles.href = new URL('chat-roles.css', chatScript.src).href;
+  document.head.append(roleStyles);
+}
+
 (() => {
   const lang = document.documentElement.lang;
   const copy = lang === 'it' ? {
@@ -46,9 +56,13 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     const status = screen.querySelector('.chat-status');
     status.textContent = copy.ready;
 
-    // The initial greeting is from Liss/the other participant, so it belongs on the left.
+    // The greeting is authored in the page as an assistant message. Its role
+    // is determined by its source, never by the text it contains.
     const greeting = log.querySelector('.bubble');
-    if (greeting) greeting.classList.replace('out', 'in');
+    if (greeting) {
+      greeting.classList.remove('in', 'out', 'user', 'assistant');
+      greeting.classList.add('assistant');
+    }
 
     const form = document.createElement('form');
     form.className = 'chat-compose';
@@ -81,10 +95,12 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     return widget;
   });
 
-  function appendMessage(text, side) {
+  function appendMessage(text, role) {
     widgets.forEach(({ log }) => {
       const bubble = document.createElement('div');
-      bubble.className = `bubble ${side}`;
+      // The caller supplies the source role: user for submitted input and
+      // assistant for the Make webhook reply.
+      bubble.className = `bubble ${role}`;
       bubble.textContent = text;
       log.append(bubble);
       log.scrollTop = log.scrollHeight;
@@ -100,7 +116,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
       log.querySelector('.typing')?.remove();
       if (value) {
         const typing = document.createElement('div');
-        typing.className = 'bubble typing';
+        typing.className = 'bubble typing assistant';
         typing.setAttribute('role', 'status');
         typing.setAttribute('aria-label', copy.typing);
         for (let i = 0; i < 3; i++) typing.append(document.createElement('span'));
@@ -131,7 +147,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
       return;
     }
 
-    appendMessage(message, 'in');
+    appendMessage(message, 'user');
     widget.input.value = '';
     setBusy(true);
     const controller = new AbortController();
@@ -149,7 +165,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
       if (!response.ok) throw new Error('HTTP error');
       const data = await response.json();
       if (typeof data?.reply !== 'string' || !data.reply.trim()) throw new Error('Missing reply');
-      appendMessage(data.reply, 'out');
+      appendMessage(data.reply, 'assistant');
     } catch (error) {
       widget.input.value = message;
       showError(error.name === 'AbortError' ? copy.timeout : copy.error);
