@@ -5,15 +5,39 @@
  */
 const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo6bdw8inxk';
 
-// Load the role-specific chat styles from the same directory as this script so
-// the language-specific pages work whether the site is hosted at / or a subpath.
-const chatScript = document.currentScript;
-if (chatScript?.src) {
-  const roleStyles = document.createElement('link');
-  roleStyles.rel = 'stylesheet';
-  roleStyles.href = new URL('chat-roles.css', chatScript.src).href;
-  document.head.append(roleStyles);
+// Keep the role styles available on every language page, including deployments
+// where a previously cached 404 for chat-roles.css might otherwise persist.
+const roleStyle = document.createElement('style');
+roleStyle.textContent = `
+.live-chat .bubble.assistant {
+  align-self: flex-start;
+  background: var(--orange);
+  color: white;
+  border: 0;
+  border-bottom-left-radius: 4px;
+  max-width: 82%;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
+.live-chat .bubble.user {
+  align-self: flex-end;
+  background: #2E3141;
+  border: 1px solid var(--line-dark);
+  color: var(--cream);
+  border-bottom-right-radius: 4px;
+  max-width: 82%;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.live-chat .bubble.typing.assistant {
+  align-self: flex-start;
+  background: var(--orange);
+  border: 0;
+  border-bottom-left-radius: 4px;
+}
+.live-chat .bubble.typing.assistant span { background: white; }
+`;
+document.head.append(roleStyle);
 
 (() => {
   const lang = document.documentElement.lang;
@@ -56,8 +80,6 @@ if (chatScript?.src) {
     const status = screen.querySelector('.chat-status');
     status.textContent = copy.ready;
 
-    // The greeting is authored in the page as an assistant message. Its role
-    // is determined by its source, never by the text it contains.
     const greeting = log.querySelector('.bubble');
     if (greeting) {
       greeting.classList.remove('in', 'out', 'user', 'assistant');
@@ -98,8 +120,6 @@ if (chatScript?.src) {
   function appendMessage(text, role) {
     widgets.forEach(({ log }) => {
       const bubble = document.createElement('div');
-      // The caller supplies the source role: user for submitted input and
-      // assistant for the Make webhook reply.
       bubble.className = `bubble ${role}`;
       bubble.textContent = text;
       log.append(bubble);
