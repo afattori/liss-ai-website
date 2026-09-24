@@ -42,18 +42,21 @@ document.head.append(roleStyle);
 (() => {
   const lang = document.documentElement.lang;
   const copy = lang === 'it' ? {
+    greeting: 'Ciao! Come posso aiutarti oggi?',
     placeholder: 'Scrivi un messaggio…', send: 'Invia', label: 'Messaggio a Liss',
     ready: 'Prova la chat', typing: 'Liss sta scrivendo…',
     unavailable: 'La chat non è ancora disponibile. Riprova più tardi.',
     error: 'Risposta non ricevuta. Riprova: il messaggio potrebbe essere già arrivato.',
     timeout: 'La risposta tarda ad arrivare. Riprova: il messaggio potrebbe essere già arrivato.'
   } : lang === 'pt' ? {
+    greeting: 'Olá! Como posso ajudar hoje?',
     placeholder: 'Escreva uma mensagem…', send: 'Enviar', label: 'Mensagem para a Liss',
     ready: 'Experimente o chat', typing: 'A Liss está a escrever…',
     unavailable: 'O chat ainda não está disponível. Tente mais tarde.',
     error: 'Não recebemos resposta. Tente novamente: a mensagem pode já ter chegado.',
     timeout: 'A resposta está a demorar. Tente novamente: a mensagem pode já ter chegado.'
   } : {
+    greeting: 'Hi! How can I help you today?',
     placeholder: 'Type a message…', send: 'Send', label: 'Message Liss',
     ready: 'Try the live chat', typing: 'Liss is typing…',
     unavailable: 'Chat is not available yet. Please try again later.',
@@ -84,6 +87,8 @@ document.head.append(roleStyle);
     if (greeting) {
       greeting.classList.remove('in', 'out', 'user', 'assistant');
       greeting.classList.add('assistant');
+      greeting.textContent = copy.greeting;
+      greeting.lang = lang;
     }
 
     const form = document.createElement('form');
