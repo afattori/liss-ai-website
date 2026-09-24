@@ -26,6 +26,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     error: 'No reply received. Please try again: your message may already have arrived.',
     timeout: 'The reply is taking too long. Please try again: your message may already have arrived.'
   };
+
   let userId;
   function getUserId() {
     if (userId) return userId;
@@ -38,12 +39,17 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
   }
 
   let busy = false;
-  // Keep the live Make.com chat only in the second (demo) phone.
+  // Only the second phone is connected to Make. The first phone remains scripted.
   const widgets = [...document.querySelectorAll('#demoChat')].map((log) => {
     const screen = log.closest('.phone-screen');
     screen.classList.add('live-chat');
     const status = screen.querySelector('.chat-status');
     status.textContent = copy.ready;
+
+    // The initial greeting is from Liss/the other participant, so it belongs on the left.
+    const greeting = log.querySelector('.bubble');
+    if (greeting) greeting.classList.replace('out', 'in');
+
     const form = document.createElement('form');
     form.className = 'chat-compose';
     const input = document.createElement('input');
@@ -57,6 +63,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     send.textContent = copy.send;
     send.disabled = true;
     form.append(input, send);
+
     const error = document.createElement('p');
     error.className = 'chat-error';
     error.id = `${log.id}-error`;
@@ -64,6 +71,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     error.hidden = true;
     input.setAttribute('aria-describedby', error.id);
     screen.append(error, form);
+
     const widget = { log, status, form, input, send, error };
     input.addEventListener('input', () => { send.disabled = busy || !input.value.trim(); });
     form.addEventListener('submit', (event) => {
@@ -113,6 +121,7 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
     const message = widget.input.value.trim();
     if (busy || !message || message.length > 2000) return;
     showError('');
+
     let endpoint;
     try {
       endpoint = new URL(MAKE_CHAT_WEBHOOK_URL);
@@ -121,14 +130,18 @@ const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo
       showError(copy.unavailable);
       return;
     }
+
     appendMessage(message, 'in');
     widget.input.value = '';
     setBusy(true);
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 30000);
+
     try {
       const response = await fetch(endpoint.href, {
-        method: 'POST', mode: 'cors', credentials: 'omit',
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: getUserId(), message, channel: 'website' }),
         signal: controller.signal
