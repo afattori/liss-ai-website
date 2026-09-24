@@ -8,7 +8,7 @@ The greeting is **Hi! How can I help you today?** on all language versions;
 controls and errors follow the page language. No build step is required.
 
 Set `MAKE_CHAT_WEBHOOK_URL` at the top of `chat.js` to the HTTPS URL of a
-dedicated Make chat scenario. It is intentionally empty until configured; the
+dedicated Make chat scenario. The supplied chat endpoint is configured; the
 existing demo-request form has its own webhook and is not used by the chat.
 Do not add OpenAI keys, Make API keys, authorization tokens or other secrets to
 these public files. The endpoint itself is public, not an authentication secret.
