@@ -1,9 +1,9 @@
 /* Public chat endpoint configuration. Set this to your Make chat webhook URL.
  * This URL is visible to every visitor: NEVER put API keys or secrets here.
  * Make must handle JSON POST + OPTIONS/CORS; see README.md before enabling.
- * Leave empty until the chat scenario is ready (the contact form is separate).
+ * Dedicated chat scenario; the contact form uses a separate endpoint.
  */
-const MAKE_CHAT_WEBHOOK_URL = '';
+const MAKE_CHAT_WEBHOOK_URL = 'https://hook.eu1.make.com/ragavi79fiie16973f9x3xo6bdw8inxk';
 
 (() => {
   const lang = document.documentElement.lang;
